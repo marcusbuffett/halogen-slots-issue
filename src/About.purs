@@ -38,7 +38,7 @@ _innerComponent = SProxy
 component :: forall m. Navigate m => H.Component HH.HTML (Const Void) Unit Void m
 component =
   Hooks.component \_ _ ->
-    Hooks.pure $ HH.slot _innerComponent unit innerComponent unit absurd
+    Hooks.pure $ HH.div [] [ HH.slot _innerComponent unit innerComponent unit absurd ]
 
 innerComponent :: forall m. Navigate m => H.Component HH.HTML (Const Void) Unit Void m
 innerComponent =
